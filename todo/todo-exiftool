@@ -1,0 +1,4 @@
+exiftool -a -u brochure.pdf
+
+-a to display duplicated tags
+-u to display unknown tags

@@ -4,6 +4,9 @@
 nmap 192.168.1.1
 
 nmap -sT -sU 192.168.1.1
+
+sudo nmap -Pn -p- -A --min-rate 5000 -oN scan.txt {TARGET_IP}
+
 ```
 
 [!WARNING]
@@ -28,3 +31,13 @@ nmap default port scanning will scan only the 1000 most popular ports
 
 N.B.
 Da valutare creazione di script per nmap
+
+
+lite
+sudo nmap -sC -sV -oA broker IP
+
+full
+sudo nmap -p- --min-rate=5000 -oG broker-all ip
+
+prendiamo tutte le porte aperte, poi
+sudo nmap -sC -sV -oA broker -p '22,80,....,' ip

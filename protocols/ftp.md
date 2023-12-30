@@ -4,6 +4,9 @@ File Transfer Protocol, standard protocol used to transfer files from one host t
 
 ```console
 ftp {TARGET_IP}
+
+# force active mode
+ftp -A {TARGET_IP}
 ```
 
 * *Default Port*: 21
@@ -13,7 +16,14 @@ FTP could allow anonymous access. It usually accepts any string as password, but
 * anonymous
 * guest
 * email (anonymous@domain.com)
-  
+
+## Bruteforce
+
+We can try to use bruteforce to guess the FTP password using hydra
+```console
+hydra -l {USERNAME} -P {WORDLIST} {TARGET_IP} -t 4 ftp
+```
+
 ## Commands
 
 | COMMAND | DESCRIPTION | 
@@ -31,3 +41,4 @@ FTP could allow anonymous access. It usually accepts any string as password, but
 
 # Tips
 * Check for anonymous authentication
+* Use common_pass.txt or rockyou.txt as wordlist for bruteforce

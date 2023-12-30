@@ -1,0 +1,23 @@
+sudo find /usr -name mssqlclient.py
+
+ls vs ls -la
+
+- /etc/passwd mostra gli utenti di un sistema su linux
+
+searchsploit openssh
+
+
+
+- gobuster + dirsearch, o gobuster ricorsivo
+
+
+
+
+tips:
+
+
+
+
+attackerkb?
+
+CVE site:attackerkb.com

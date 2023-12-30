@@ -20,6 +20,12 @@ gobuster vhost -w {WORDLIST} -u {TARGET_HOST} --append-domain
 gobuster dir --url http://{TARGET_IP}/ --wordlist {WORDLIST}
 ```
 
+Use this command in combination of other enumeration tecniques like dirsearch
+
+```console
+dirsearch -u {TARGET_IP}
+```
+
 ### Additional Flags
 
 | FLAG | DESCRIPTION | 

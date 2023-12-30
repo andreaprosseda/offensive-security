@@ -1,0 +1,7 @@
+sudo -l
+lista i comandi per ogni utente
+https://gtfobins.github.io/
+  sito che raccoglie binari unix bypassati
+
+
+    - da vedere SUID ----> (in gergo sticky bit) (diferenza tra comando con sudo e programma con stickybit)
