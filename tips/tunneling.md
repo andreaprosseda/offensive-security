@@ -1,0 +1,31 @@
+Tunneling
+While the theory surrounding tunneling has been broadly covered in the introduction of this document, we
+will now dive into the praxis; it is now time to get our hands dirty and start digging.
+As stated, there are multiple options to take at this point when it comes to the actual port forwarding, but
+we will opt for local port forwarding (you can find the dynamic version in this document's appendix.)
+To use local port forwarding with SSH , you can use the ssh command with the -L option, followed by the
+local port, remote host and port, and the remote SSH server. For example, the following command will
+forward traffic from the local port 1234 to the remote server remote.example.com 's localhost interface
+on port 22 :
+
+ssh -L 1234:localhost:22 user@remote.example.com
+When you run this command, the SSH client will establish a secure connection to the remote SSH server,
+and it will listen for incoming connections on the local port 1234 . When a client connects to the local port,
+the SSH client will forward the connection to the remote server on port 22 . This allows the local client to
+access services on the remote server as if they were running on the local machine.
+In the scenario we are currently facing, we want to forward traffic from any given local port, for instance
+1234 , to the port on which PostgreSQL is listening, namely 5432 , on the remote server. We therefore
+specify port 1234 to the left of localhost , and 5432 to the right, indicating the target port.
+ssh -L 1234:localhost:5432 christine@{target_IP}
+
+
+After entering christine 's password, we can see that we have a shell on the target system once more,
+however, under its hood, SSH has opened up a socket on our local machine on port 1234 , to which we can
+now direct traffic that we want forwarded to port 5432 on the target machine. We can see this new socket
+by running ss again, but this time on our local machine, using a different shell than the one we used to
+establish the tunnel.
+
+
+se un db per esempio
+
+psql -U christine -h localhost -p 1234

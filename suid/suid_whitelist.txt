@@ -1,0 +1,7 @@
+nmap
+find
+vim
+bash
+less
+dstat
+doas

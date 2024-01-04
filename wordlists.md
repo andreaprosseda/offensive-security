@@ -1,0 +1,3 @@
+- SecLists/Fuzzing/special-chars.txt
+- dir discovery/web-content/raft small or medium
+- passowrd: xato

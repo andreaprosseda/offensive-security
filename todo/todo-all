@@ -1,6 +1,6 @@
 sudo find /usr -name mssqlclient.py
 
-ls vs ls -la
+ls vs ls -la file hidden
 
 - /etc/passwd mostra gli utenti di un sistema su linux
 

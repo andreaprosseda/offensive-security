@@ -1,12 +1,13 @@
 # MySQL
 
 MySQL is an relational database management system (RDBMS) that is widely used for managing and organizing data.
+The `mysql` CLI tool can be used to interact with the database.
 
 ```console
-mysql -h {TARGET_IP} -u {USERNAME} -p {PASSWORD}
+mysql -u {USERNAME} -h {TARGET_IP} -p {PORT}
 ```
 
-# Commands
+## Commands
 | COMMAND | DESCRIPTION | 
 | :------------: | :------------: | 
 | SHOW databases | Prints out the databases we can access |
@@ -14,6 +15,7 @@ mysql -h {TARGET_IP} -u {USERNAME} -p {PASSWORD}
 | SHOW tables | Prints out the available tables inside the current database |
 | SELECT * FROM {table_name} | Prints out all the data from the table {table_name} |
 
-# Tips
+
+## Tips
 * Check for root authentication
 * Check for passwordless authentication

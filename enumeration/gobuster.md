@@ -11,7 +11,8 @@ gobuster vhost -w {WORDLIST} -u {TARGET_HOST} --append-domain
 ### Additional Flags
 | FLAG | DESCRIPTION | 
 | :------------: | :------------: | 
-| --exclude-length 334 | To exclude specific length of page, e.g. default error page |
+| -t | To set the number of threads Gobuster can use |
+| --exclude-length {length} | To exclude specific length of page, e.g. default error page |
 
 
 ## Directories
