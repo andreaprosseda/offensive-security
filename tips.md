@@ -14,3 +14,8 @@
 
 
 - Se hai accesso ai log, prova log poisoning!
+
+* If you have a partial password, google it instead of (before) bruteforce only few chars
+
+
+Se conosci il nome dell'utente, prova subito a verificarne il suo su .ssh/ pe prendere id_rsa

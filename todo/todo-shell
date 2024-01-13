@@ -15,21 +15,6 @@ stty raw -echo;fg;
 
 
 
-- whoami
-- pwd
-- etc/passwd per vedere se ci sono altre persone, se non c'è nessuno vai su root
-
-se non trovo niente allora
-linPEAS 
-winPEAS
-
-
-poi se non va ancora
-PSPI
-
-
-
-
 
 fare un wget prima per capire se non è blind
 
@@ -88,3 +73,39 @@ listening locally on a given machine.
 -n: Do not try to resolve service names.
 ss -tln
 con ss -tl poi possiamo risolvere il nome (che si sostituisce alla porta)
+
+
+
+
+
+
+
+
+
+grep --exclude-dir={dir1,dir2,*.dst} -rnw '/path/to/search/' -e "pattern"
+grep -Rni '/opt/ofbiz/' -e 'password='
+
+grep -Rni '/opt/ofbiz/' -e '{SHA}' | sed 's/.*{SHA}//' | sort -u
+grep -Rni '/opt/ofbiz/runtime/data/derby/ofbiz/seg0/' -e '{SHA}' | sed 's/.*{SHA}//' | sort -u
+
+
+
+grep -Rni '/opt/ofbiz/runtime/data/derby/ofbiz/seg0/' --binary-files=text -e '$SHA$d'
+
+
+cerca file con estensione .key, i file non leggibili (permission denied, vengono rediretti su dev/null)
+find /percorso/della/cartella -type f -name "*.key" -readable 2>/dev/null
+
+
+
+
+
+
+
+Running strings against a file:
+  $ strings /path/to/file
+Running strace against a command:
+$ strace -v -f -e execve <command> 2>&1 | grep exec
+Running ltrace against a command:
+  $ ltrace <command>
+anche reverse

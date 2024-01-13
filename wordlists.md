@@ -1,3 +1,3 @@
 - SecLists/Fuzzing/special-chars.txt
-- dir discovery/web-content/raft small or medium
+- dir discovery/web-content/raft-small-directories-lowercase
 - passowrd: xato

@@ -1,0 +1,8 @@
+[TODO]
+ffuf -c -request request.req -request-proto http -w {WORDLIST} /probable-v2-top -fr "Wrong Credentials"
+
+
+
+ffuf -c -request request.req -request-proto http -w https://github.com/danielmiessler/SecLists/blob/master/Passwords/probable-v2-top1575.txt -fr "Wrong Credentials"
+
+

@@ -1,3 +1,4 @@
+[TODO]
 Tunneling
 While the theory surrounding tunneling has been broadly covered in the introduction of this document, we
 will now dive into the praxis; it is now time to get our hands dirty and start digging.
@@ -17,7 +18,7 @@ In the scenario we are currently facing, we want to forward traffic from any giv
 1234 , to the port on which PostgreSQL is listening, namely 5432 , on the remote server. We therefore
 specify port 1234 to the left of localhost , and 5432 to the right, indicating the target port.
 ssh -L 1234:localhost:5432 christine@{target_IP}
-
+sh -L 1234:localhost:80 daniel@10.10.11.136
 
 After entering christine 's password, we can see that we have a shell on the target system once more,
 however, under its hood, SSH has opened up a socket on our local machine on port 1234 , to which we can
@@ -29,3 +30,16 @@ establish the tunnel.
 se un db per esempio
 
 psql -U christine -h localhost -p 1234
+
+
+
+
+port forwarding
+con chisel (prendi quello amd64)
+
+da kali 
+└─$ chisel server -p 12312 --reverse
+
+da target
+/chisel client 10.10.14.105:12312 R:631:127.0.0.1:631
+avvia il browser su http://127.0.0.1:631
