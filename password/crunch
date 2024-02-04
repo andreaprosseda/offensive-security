@@ -1,0 +1,7 @@
+
+
+
+
+
+We can do this by using the crunch command line tool to generate a custom wordlist. We’ll set the minimum and maximum length to 6 characters, specify the pattern using the -t parameter, then hard-code the first three characters to Lab followed by three numeric digits.
+kali@kali:~$ crunch 6 6 -t Lab%%% > wordlist

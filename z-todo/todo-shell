@@ -1,0 +1,23 @@
+Running strings against a file:
+  $ strings /path/to/file
+Running strace against a command:
+$ strace -v -f -e execve <command> 2>&1 | grep exec
+Running ltrace against a command:
+  $ ltrace <command>
+anche reverse
+
+
+
+
+
+exiftool -a -u brochure.pdf
+
+-a to display duplicated tags
+-u to display unknown tags
+
+
+
+
+
+verificare se un input è vulnerabile SSTI
+${{<%[%'"}}%\.

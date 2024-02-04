@@ -1,7 +1,9 @@
 # snmpwalk
 
 ```console
-snmpwalk -c public -v1 -t 10 192.168.1.1 OID
+snmpwalk -c public -v1 -t 10 192.168.1.1 >> FILE_PATH
+
+snmpwalk -c public -v1 -t 10 192.168.1.1 OID 
 ```
 
 # Flags

